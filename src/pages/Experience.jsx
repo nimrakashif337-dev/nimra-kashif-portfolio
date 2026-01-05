@@ -4,7 +4,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative min-h-screen bg-black text-white px-6 md:px-20 py-24 overflow-hidden"
+      className="relative min-h-screen bg-black text-white px-6 md:px-20 py-24 overflow-hidden pt-16 scroll-mt-20"
     >
       {/* Background Glow */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-600/20 blur-[120px] rounded-full"></div>

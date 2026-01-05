@@ -6,7 +6,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="bg-black text-white py-20 px-6 md:px-16"
+      className="bg-black text-white py-20 px-6 md:px-16 pt-16 scroll-mt-20"
     >
       {/* Heading */}
       <p className="text-sm tracking-widest text-gray-400 mb-4">

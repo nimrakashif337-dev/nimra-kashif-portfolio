@@ -4,7 +4,7 @@ function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md shadow-md shadow-black/40">
       <div className="max-w-7xl mx-auto px-4 h-14 flex justify-between items-center">
 
         {/* LOGO */}

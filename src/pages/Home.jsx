@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-[#0b0b0b] text-white flex items-center"
+      className="min-h-screen bg-[#0b0b0b] text-white flex items-center pt-16 scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto px-6 w-full">
 

@@ -28,7 +28,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-black text-white px-6 md:px-20 py-20"
+      className="min-h-screen bg-black text-white px-6 md:px-20 py-20 pt-16 scroll-mt-20"
     >
       {/* Heading */}
       <div className="mb-12">

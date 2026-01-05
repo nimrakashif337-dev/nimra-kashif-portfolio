@@ -9,7 +9,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-[#0b0b0b] text-white px-6 py-24"
+      className="min-h-screen bg-[#0b0b0b] text-white px-6 py-24 pt-16 scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto">
 
