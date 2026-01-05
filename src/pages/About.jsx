@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen bg-black text-white flex items-center px-6 overflow-hidden"
+      className="min-h-screen bg-black text-white flex items-center px-6 overflow-x-hidden"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
@@ -65,7 +65,7 @@ export default function About() {
               <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
                 JavaScript
               </div>
-              
+
               <div className="bg-purple-900/20  border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
                 React
               </div>

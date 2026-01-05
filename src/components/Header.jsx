@@ -5,16 +5,18 @@ function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 h-14 flex justify-between items-center">
 
         {/* LOGO */}
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-700 to-purple-900 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-            NK
-          </div>
-          <span className="text-white font-semibold tracking-wide">
-            NimraKashif
-          </span>
+        <div className="flex items-center gap-2 min-w-0">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-700 to-purple-900 flex items-center justify-center text-sm font-bold text-white shrink-0">
+             NK
+           </div>
+
+           <span className="hidden sm:block text-white font-semibold tracking-wide">
+             NimraKashif
+           </span>
+
         </div>
 
         {/* DESKTOP NAV */}
@@ -68,6 +70,7 @@ function Header() {
 }
 
 export default Header;
+
 
 
 
