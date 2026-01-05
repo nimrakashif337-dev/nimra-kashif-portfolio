@@ -65,7 +65,8 @@ export default function About() {
               <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
                 JavaScript
               </div>
-              <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
+              
+              <div className="bg-purple-900/20  border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
                 React
               </div>
             </div>
