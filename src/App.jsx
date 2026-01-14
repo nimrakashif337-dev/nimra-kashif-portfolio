@@ -1,53 +1,95 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Projects from "./pages/Project";
-import Education from "./pages/Education";
-import Experience from "./pages/Experience";
-import Skills from "./pages/Skills";
+import Collection from "./pages/Collection";
+import Gallery from "./pages/Gallery";
+import Occasions from "./pages/Occasions";
+import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <>
-      <Header />
+   
+      <>
+        <Header />
 
-      <section id="home">
-        <Home />
-      </section>
+        <main className="pt-1 bg-black">
+          <section id="home"><Home /></section>
+          <section id="about"><About /></section>
+          <section id="collection"><Collection /></section>
+          <section id="gallery"><Gallery /></section>
+          <section id="occasions"><Occasions /></section>
+          <section id="services"><Services /></section>
+          <section id="contact"><Contact /></section>
+          <Footer />
+        </main>
+      </>
 
-      <section id="about">
-        <About />
-      </section>
-
-      <section id="project">
-        <Projects />
-      </section>
-
-      <section id="education">
-        <Education />
-      </section>
-
-      <section id="experience">
-        <Experience />
-      </section>
-
-      <section id="skills">
-        <Skills />
-      </section>
-
-      <section id="contact">
-        <Contact />
-      </section>
-
-      {/* ✅ FOOTER YAHAN HOGA */}
-      <Footer />
-    </>
+    
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Collection from "./pages/Collection";
+
+
+
+
+// import Contact from "./pages/Contact";
+
+// function App() {
+//   return (
+//     <>
+//       <Header />
+
+//       <section id="home">
+//         <Home />
+//       </section>
+
+//       <section id="about">
+//         <About />
+//       </section>
+
+//       <section id="collection">
+//         <Collection />
+//       </section>
+
+//       <section id="gallery">
+//         <Gallery />
+//       </section>
+
+//       <section id="occasion">
+//         <Occasion />
+//       </section>
+
+//       <section id="service">
+//         <Service />
+//       </section>
+
+//       <section id="contact">
+//         <Contact />
+//       </section>
+
+//       {/* ✅ FOOTER YAHAN HOGA */}
+//       <Footer />
+//     </>
+//   );
+// }
+
+// export default App;
 
 
 

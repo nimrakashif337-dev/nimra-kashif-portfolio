@@ -1,113 +1,104 @@
-export default function Skills() {
-  const mainSkills = [
-    { name: "HTML", level: 90 },
-    { name: "CSS", level: 85 },
-    { name: "JavaScript", level: 75 },
-    { name: "React", level: 70 },
+import React from "react";
+
+// IMAGES
+import wedding from "../assets/bridal.jfif";
+import ring from "../assets/diamond-ring.jfif";
+import necklace from "../assets/gold-necklace.jfif";
+import bracelet from "../assets/luxury-bracelet.jfif";
+import earrings from "../assets/earrings.jfif";
+import gift from "../assets/ring.jfif";
+
+export default function Occasions() {
+  const occasions = [
+    {
+      title: "Wedding Celebrations",
+      desc:
+        "Celebrate your most precious moments with exquisitely crafted bridal jewelry. Our wedding collections are designed to enhance elegance, tradition, and timeless beauty.",
+      img: wedding,
+    },
+    {
+      title: "Engagement Moments",
+      desc:
+        "Mark the beginning of forever with our stunning engagement rings. Each piece symbolizes love, commitment, and a promise that lasts a lifetime.",
+      img: ring,
+    },
+    {
+      title: "Anniversary Gifts",
+      desc:
+        "Celebrate milestones of love with meaningful anniversary jewelry. Thoughtfully designed to reflect memories, emotions, and enduring romance.",
+      img: necklace,
+    },
+    {
+      title: "Festive Occasions",
+      desc:
+        "Add sparkle to every celebration with luxurious festive jewelry. Perfect for cultural events, parties, and joyful gatherings.",
+      img: bracelet,
+    },
+    {
+      title: "Everyday Elegance",
+      desc:
+        "Minimal yet refined jewelry designed for everyday wear. Elevate your daily style with subtle luxury and unmatched comfort.",
+      img: earrings,
+    },
+    {
+      title: "Luxury Gifting",
+      desc:
+        "A timeless gift for someone special. Our curated gift collections express love, appreciation, and unforgettable emotions.",
+      img: gift,
+    },
   ];
 
   return (
     <section
-      id="skills"
-      className="min-h-screen bg-[#0b0b0b] text-white px-6 py-24 pt-16 scroll-mt-20"
+      id="occasions"
+      className="bg-black text-white px-8 md:px-20 py-24"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* HEADER */}
+      <div className="max-w-4xl mx-auto text-center mb-20">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Jewelry for Every <span className="text-[#d4af37]">Occasion</span>
+        </h2>
+        <p className="text-gray-400 leading-relaxed text-lg">
+          Every moment deserves a touch of elegance. Our occasion-based jewelry
+          collections are thoughtfully curated to complement life’s most
+          meaningful celebrations.
+        </p>
+      </div>
 
-        {/* Heading */}
-        <div className="mb-16">
-          <p className="text-sm tracking-[0.3em] text-purple-400 uppercase mb-3">
-            My Skills
-          </p>
-          <h2 className="text-4xl md:text-5xl font-semibold">
-            Technical <span className="text-purple-500">Expertise</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mt-5 text-lg">
-            Core frontend technologies I use while building modern and
-            responsive user interfaces.
-          </p>
-        </div>
-
-        {/* MAIN SKILLS (SMALLER CIRCLES) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
-          {mainSkills.map((skill, index) => (
-            <div key={index} className="flex flex-col items-center gap-4">
-              <div className="relative w-24 h-24">
-                <svg className="w-full h-full rotate-[-90deg]">
-                  <circle
-                    cx="48"
-                    cy="48"
-                    r="40"
-                    stroke="#1f1f1f"
-                    strokeWidth="8"
-                    fill="none"
-                  />
-                  <circle
-                    cx="48"
-                    cy="48"
-                    r="40"
-                    stroke="#a855f7"
-                    strokeWidth="8"
-                    fill="none"
-                    strokeDasharray={2 * Math.PI * 40}
-                    strokeDashoffset={
-                      2 * Math.PI * 40 -
-                      (skill.level / 100) * (2 * Math.PI * 40)
-                    }
-                    strokeLinecap="round"
-                  />
-                </svg>
-
-                <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold">
-                  {skill.level}%
-                </span>
-              </div>
-
-              <p className="text-gray-300 font-medium">
-                {skill.name}
+      {/* GRID */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {occasions.map((item, index) => (
+          <div
+            key={index}
+            className="bg-black border border-gray-800 rounded-2xl overflow-hidden hover:-translate-y-3 transition duration-500"
+          >
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-56 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-[#d4af37] mb-3">
+                {item.title}
+              </h3>
+              <p className="text-gray-400 leading-relaxed">
+                {item.desc}
               </p>
             </div>
-          ))}
-        </div>
-
-        {/* CONTEXT API – STRONG SECTION */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">
-              React <span className="text-purple-500">Context API</span>
-            </h3>
-
-            <p className="text-gray-400 leading-relaxed mb-4">
-              I use the React Context API to manage global state and avoid
-              unnecessary props drilling. It helps keep components clean,
-              reusable, and easy to maintain.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed">
-              I have implemented context in small-scale projects such as theme
-              handling, user data sharing, and UI state management.
-            </p>
           </div>
+        ))}
+      </div>
 
-          {/* SUPPORTING SKILLS */}
-          <div className="flex flex-wrap gap-4">
-            {["Tailwind CSS", "Git & GitHub", "Responsive Design"].map(
-              (skill, i) => (
-                <span
-                  key={i}
-                  className="px-5 py-2 border border-purple-500/40 rounded-full text-sm text-gray-300
-                  hover:bg-purple-600 hover:text-black transition"
-                >
-                  {skill}
-                </span>
-              )
-            )}
-          </div>
-        </div>
-
+      {/* BUTTON */}
+      <div className="text-center mt-24">
+        <button className="px-10 py-3 border border-[#d4af37] text-[#d4af37] rounded-full hover:bg-[#d4af37] hover:text-black transition duration-500">
+          Explore Occasion Collections
+        </button>
       </div>
     </section>
   );
 }
+
 
 
 

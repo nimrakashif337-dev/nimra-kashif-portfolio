@@ -1,82 +1,130 @@
-// import { motion } from "framer-motion";
-// import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
-// // import profile from "../assets/nimra.jpg";
+
+import ringImg from "../assets/ring.jfif";
+import necklaceImg from "../assets/necklace.jfif";
+import bridalImg from "../assets/bridal.jfif";
+import earringsImg from "../assets/earrings.jfif";
+
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="min-h-screen bg-black text-white flex items-center px-6 overflow-x-hidden pt-16 scroll-mt-20"
-    >
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div className="bg-black text-white">
 
-        {/* LEFT CONTENT */}
-        <div className="animate-fadeInUp">
-          <p className="text-purple-400 mb-3 tracking-widest uppercase">
-            About Me
+      {/* HERO SECTION */}
+      <section className="py-24 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-6xl font-serif mb-6">
+            About <span className="text-[#d4af37]">Our Jewelry</span>
+          </h1>
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+            Luxury crafted with precision, elegance, and timeless beauty.
           </p>
+        </div>
+      </section>
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Professional <span className="text-purple-500">Frontend</span>
-            <br />
-            Solutions for Web
-          </h2>
+      {/* STORY SECTION */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
 
-          <p className="text-gray-300 mb-8 leading-relaxed max-w-xl">
-            Hi, I'm Nimra — a Frontend Developer skilled in HTML, CSS,
-            JavaScript, React.js, and Tailwind CSS. I focus on creating
-            modern, responsive, and user-friendly interfaces.
-          </p>
-
-          <div className="grid grid-cols-2 gap-4 mb-10">
-            <p className="flex items-center gap-2">✔ Clean UI Design</p>
-            <p className="flex items-center gap-2">✔ Responsive Layouts</p>
-            <p className="flex items-center gap-2">✔ React Projects</p>
-            <p className="flex items-center gap-2">✔ Tailwind Styling</p>
+          {/* LEFT TEXT */}
+          <div>
+            <h2 className="text-4xl font-serif mb-6">
+              Our Story
+            </h2>
+            <p className="text-gray-400 mb-4 leading-relaxed">
+              Jewelry is not just fashion — it’s a reflection of confidence,
+              love, and heritage. Every piece we design tells a story of
+              craftsmanship and passion.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              From minimal everyday elegance to luxurious bridal sets, our
+              designs are made to last forever.
+            </p>
           </div>
 
-          <a
-            href="#contact"
-            className="inline-block bg-purple-600 hover:bg-purple-700 transition-all duration-300 px-7 py-3 rounded-lg font-medium shadow-lg hover:shadow-purple-500/30"
-          >
-            Contact Me
-          </a>
-        </div>
-
-        {/* RIGHT SIDE – IMAGE KI JAGAH */}
-        <div className="relative animate-fadeInRight">
-          <div className="absolute -inset-1 bg-purple-600/30 blur-2xl rounded-2xl"></div>
-
-          <div className="relative bg-black border border-purple-500/30 rounded-2xl p-10 text-center">
-            <h3 className="text-4xl font-bold text-purple-500 mb-2">
-              Frontend
+          {/* RIGHT CARD */}
+          <div className="bg-[#111] p-10 rounded-2xl border border-white/10 shadow-xl">
+            <h3 className="text-3xl font-serif mb-6 text-[#d4af37]">
+              Why Choose Us
             </h3>
-            <p className="text-gray-400 mb-8">
-              Passion • Creativity • Growth
-            </p>
+            <ul className="space-y-4 text-gray-300">
+              <li>✨ Premium Handcrafted Jewelry</li>
+              <li>✨ Elegant & Timeless Designs</li>
+              <li>✨ Perfect for Every Occasion</li>
+              <li>✨ Trusted Quality Finish</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
-                HTML
-              </div>
-              <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
-                CSS
-              </div>
-              <div className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
-                JavaScript
-              </div>
+      {/* STATS SECTION */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-serif text-center mb-12">
+            Categories
+          </h2>
 
-              <div className="bg-purple-900/20  border border-purple-500/20 rounded-lg p-4 hover:scale-105 transition">
-                React
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {/* CARD */}
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer">
+              <img
+                src={ringImg}
+                alt="Rings"
+                className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 className="text-white text-2xl font-serif tracking-wide">
+                  Rings
+                </h3>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer">
+              <img
+                src={necklaceImg}
+                alt="Necklaces"
+                className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 className="text-white text-2xl font-serif tracking-wide">
+                  Necklaces
+                </h3>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer">
+              <img
+                src={bridalImg}
+                alt="Bridal Sets"
+                className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 className="text-white text-2xl font-serif tracking-wide">
+                  Bridal Sets
+                </h3>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl cursor-pointer">
+              <img
+                src={earringsImg}
+                alt="Earrings"
+                className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <h3 className="text-white text-2xl font-serif tracking-wide">
+                  Earrings
+                </h3>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+
+    </div>
   );
 }
+
 
 
 

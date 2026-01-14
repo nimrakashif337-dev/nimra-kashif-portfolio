@@ -1,75 +1,137 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-function Header() {
+export default function Header() {
   const [open, setOpen] = useState(false);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
+  };
+
+  const menuItems = [
+    "home",
+    "about",
+    "collection",
+    "gallery",
+    "occasions",
+    "services",
+    "contact",
+  ];
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md shadow-md shadow-black/40">
-      <div className="max-w-7xl mx-auto px-4 h-14 flex justify-between items-center">
+    <header className="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* LOGO */}
-        <div className="flex items-center gap-2 min-w-0">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-700 to-purple-900 flex items-center justify-center text-sm font-bold text-white shrink-0">
-             NK
-           </div>
+        <h1
+          onClick={() => scrollToSection("home")}
+          className="text-3xl font-bold cursor-pointer tracking-wide
+                     bg-gradient-to-r from-[#d4af37] to-[#f5d76e]
+                     bg-clip-text text-transparent"
+        >
+          RoséGems
+        </h1>
 
-           <span className="hidden sm:block text-white font-semibold tracking-wide">
-             NimraKashif
-           </span>
-
-        </div>
-
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-8 text-sm font-medium">
-          {["Home", "About", "Projects", "Education", "Experience", "Skills", "Contact"].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative text-gray-300 hover:text-white transition group"
-              >
+        {/* DESKTOP MENU */}
+        <ul className="hidden md:flex gap-8 text-gray-300 font-medium">
+          {menuItems.map((item) => (
+            <li
+              key={item}
+              onClick={() => scrollToSection(item)}
+              className="cursor-pointer relative group capitalize"
+            >
+              <span className="group-hover:text-[#d4af37] transition">
                 {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            )
-          )}
-        </nav>
+              </span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#d4af37] group-hover:w-full transition-all duration-300"></span>
+            </li>
+          ))}
+        </ul>
 
-        {/* MOBILE BUTTON */}
+        {/* TOGGLE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-2xl"
+          className="md:hidden text-[#d4af37]"
         >
-          {open ? "✕" : "☰"}
+          {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* MOBILE MENU */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <nav className="flex flex-col bg-black px-6 py-4 gap-4 text-sm">
-          {["Home", "About", "Projects", "Education", "Experience", "Skills", "Contact"].map(
-            (item) => (
-              <a
+      {open && (
+        <div className="md:hidden bg-black border-t border-gray-800">
+          <ul className="flex flex-col text-center py-6 gap-6 text-gray-300">
+            {menuItems.map((item) => (
+              <li
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setOpen(false)}
-                className="text-gray-300 hover:text-white transition hover:translate-x-2"
+                onClick={() => scrollToSection(item)}
+                className="cursor-pointer capitalize text-lg hover:text-[#d4af37] transition"
               >
                 {item}
-              </a>
-            )
-          )}
-        </nav>
-      </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
 
-export default Header;
+
+
+
+
+// import React from "react";
+
+// export default function Header() {
+//   const scrollToSection = (id) => {
+//     const section = document.getElementById(id);
+//     section?.scrollIntoView({ behavior: "smooth" });
+//   };
+
+//   return (
+//     <header className="fixed top-0 w-full bg-white shadow-md z-50">
+//       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+//         {/* LOGO */}
+//         <h1 className="text-2xl font-bold text-pink-500 cursor-pointer"
+//             onClick={() => scrollToSection("home")}
+//         >
+//           RoséGems
+//         </h1>
+
+//         {/* MENU */}
+//         <ul className="flex gap-6 text-gray-700 font-medium">
+//           <li onClick={() => scrollToSection("home")} className="cursor-pointer hover:text-pink-500">
+//             Home
+//           </li>
+//           <li onClick={() => scrollToSection("about")} className="cursor-pointer hover:text-pink-500">
+//             About
+//           </li>
+//           <li onClick={() => scrollToSection("collection")} className="cursor-pointer hover:text-pink-500">
+//             Collection
+//           </li>
+//           <li onClick={() => scrollToSection("gallery")} className="cursor-pointer hover:text-pink-500">
+//             Gallery
+//           </li>
+//           <li onClick={() => scrollToSection("occasions")} className="cursor-pointer hover:text-pink-500">
+//             Occasions
+//           </li>
+//           <li onClick={() => scrollToSection("service")} className="cursor-pointer hover:text-pink-500">
+//             Services
+//           </li>
+//           <li onClick={() => scrollToSection("contact")} className="cursor-pointer hover:text-pink-500">
+//             Contact
+//           </li>
+//         </ul>
+
+//       </div>
+//     </header>
+//   );
+// }
+
 
 
 

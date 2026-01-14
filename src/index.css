@@ -3,18 +3,6 @@
 @tailwind utilities;
 
 
-html {
-  scroll-behavior: smooth;
-}
-
 section {
-  padding-top: 4rem;
-  /* header height */
-  scroll-margin-top: 5rem;
-  /* navbar offset */
-}
-
-html,
-body {
-  background-color: #000;
+  scroll-margin-top: 90px;
 }
